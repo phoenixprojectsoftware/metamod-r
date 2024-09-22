@@ -101,8 +101,8 @@ const game_modinfo_t g_known_games[] = {
 	{ "wormshl",            "wormshl_i586.so",          "wormshl.dll",               "WormsHL (Legacy)"                                 },
 	{ "wormshl",            "wormshl_i686.so",          "wormshl.dll",               "WormsHL (Steam)"                                  },
 	{ "zp",                 "hl_i386.so",               "mp.dll",                    "Zombie Panic"                                     },
-	{ "zamnhlmp",			"aura.so",					"aura.dll",					 "Half-Life: Zombies Ate My Neighbours Multiplayer" },
-	{ "zamnhlmp_dev",		"aura.so",					"aura.dll",					 "Phoenix Developer - zamnhlmp"						},
+	{ "zamnhlmp",			"../aura/aura.so",					"../aura/aura.dll",					 "Half-Life: Zombies Ate My Neighbours Multiplayer" },
+	{ "zamnhlmp_dev",		".. / aura / aura.so",					"../aura/aura.dll",					 "Phoenix Developer - zamnhlmp"						},
 
 
 	// End of list terminator:
