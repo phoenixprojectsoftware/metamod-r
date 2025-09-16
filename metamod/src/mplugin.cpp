@@ -287,7 +287,7 @@ char *MPlugin::resolve_dirs(const char *path, char *tempbuf, size_t maxlen) cons
 		return found;
 
 	// try in gamedir/dlls/
-	Q_snprintf(tempbuf, maxlen, "%s/dlls/%s", g_GameDLL.gamedir, path);
+	Q_snprintf(tempbuf, maxlen, "%s/aura/%s", g_GameDLL.gamedir, path);
 	if (is_valid_path(tempbuf))
 		return tempbuf;
 

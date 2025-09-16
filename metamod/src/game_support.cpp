@@ -102,7 +102,7 @@ const game_modinfo_t g_known_games[] = {
 	{ "wormshl",            "wormshl_i586.so",          "wormshl.dll",               "WormsHL (Legacy)"                                 },
 	{ "wormshl",            "wormshl_i686.so",          "wormshl.dll",               "WormsHL (Steam)"                                  },
 	{ "zp",                 "hl_i386.so",               "mp.dll",                    "Zombie Panic"                                     },
-	{ "zamnhlmp",			"../aura/aura.so",					"../aura/aura.dll",					 "Half-Life: Cross Product" },
+	{ "zamnhlmp",			"aura.so",					"aura.dll",					 "Half-Life: Cross Product" },
 
 
 	// End of list terminator:
@@ -124,7 +124,7 @@ static const game_modinfo_t *lookup_game(const char *name)
 			if (!knowndll)
 				continue;
 
-			Q_snprintf(temp, sizeof temp, "dlls/%s", knowndll);
+			Q_snprintf(temp, sizeof temp, "aura/%s", knowndll);
 			if (is_file_exists_in_gamedir(temp))
 				return &known;
 		}
@@ -253,7 +253,7 @@ bool setup_gamedll(gamedll_t *gamedll)
 	}
 	// Else use Known-list dll.
 	else if (known) {
-		Q_snprintf(gamedll->pathname, sizeof(gamedll->pathname), "%s/dlls/%s", gamedll->gamedir, knownfn);
+		Q_snprintf(gamedll->pathname, sizeof(gamedll->pathname), "%s/aura/%s", gamedll->gamedir, knownfn);
 	}
 	else {
 		// Neither override nor known-list found a gamedll.
@@ -272,7 +272,7 @@ bool setup_gamedll(gamedll_t *gamedll)
 	// If found, store also the supposed "real" dll path based on the
 	// gamedir, in case it differs from the "override" dll path.
 	if (known && override) {
-		Q_snprintf(gamedll->real_pathname, sizeof(gamedll->real_pathname), "%s/dlls/%s", gamedll->gamedir, knownfn);
+		Q_snprintf(gamedll->real_pathname, sizeof(gamedll->real_pathname), "%s/aura/%s", gamedll->gamedir, knownfn);
 	}
 	else {
 		Q_strlcpy(gamedll->real_pathname, gamedll->pathname);
